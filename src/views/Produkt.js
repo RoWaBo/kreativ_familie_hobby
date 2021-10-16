@@ -1,21 +1,22 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 // import useWindowSize from "../hooks/useWindowSize";
-// import { useTheme } from "@emotion/react";
+import { useTheme } from "@emotion/react";
 import useClientEntries from '../hooks/useClientEntries';
 import ProductDescription from '../components/ProductDescription';
+import ProductHeader from '../components/ProductHeader';
 
 const Produkt = ({ id }) => {
 
     // HOOKS
-    // const { width } = useWindowSize()
-    // const { colors, font, spacing, breakPoints } = useTheme()
+    const { colors, font, spacing, breakPoints } = useTheme()
     const product = useClientEntries(null, id)
     console.log(product);
-    // FUNCTIONS
-    // VARIABLES
 
     // === EMOTION STYLE ===
+    const articleStyle = css`
+        margin: ${spacing.wrapping} 0;
+    `
     const imgContainerStyle = css`
 
         & > img { 
@@ -24,17 +25,31 @@ const Produkt = ({ id }) => {
             object-position: center;
         }   
     `
+    const headerStyle = css`
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: ${spacing.s} 0;   
+    `
+    const dateStyle = css`
+        font-weight: ${font.weight.light};
+    `
+    const headingStyle = css`
+        font-weight: ${font.weight.medium};
+    `
     return (
         <>
             {product && (<>
-                <div css={imgContainerStyle}>
-                    <img src={product.fields.billede.fields.file.url} alt={product.fields.billede.fields.title} />
-                </div>
-                <header>
-                    <h1>{product.fields.overskrift}</h1>
-                    <p>{product.sys.createdAt.substring(0, 10)}</p>
-                </header>
-                <ProductDescription>{product.fields.beskrivelse}</ProductDescription>
+                <article css={articleStyle}>
+                    <div css={imgContainerStyle}>
+                        <img src={product.fields.billede.fields.file.url} alt={product.fields.billede.fields.title} />
+                    </div>
+                    <ProductHeader 
+                        heading={product.fields.overskrift}
+                        date={product.sys.createdAt}
+                    />
+                    <ProductDescription>{product.fields.beskrivelse}</ProductDescription>
+                </article>
             </>)}
         </>
     );

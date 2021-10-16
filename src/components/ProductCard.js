@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 // import useWindowSize from "../hooks/useWindowSize";
 import { useTheme } from "@emotion/react";
 import PropTypes from 'prop-types';
-import ProductDescription from './ProductDescription';
+import FormatRichText from './FormatRichText';
 import { Link } from '@reach/router';
 import ImgContainer from './ImgContainer';
 import ProductHeader from './ProductHeader';
@@ -35,7 +35,7 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
                     <img src={imgObj.file.url} alt={imgObj.title} />
                 </ImgContainer>
                 <ProductHeader heading={heading} date={date} />
-                <ProductDescription textLimit={180}>{description}</ProductDescription>
+                <FormatRichText textLimit={180}>{description}</FormatRichText>
             </section>
         </Link>
     );

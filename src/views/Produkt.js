@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 // import useWindowSize from "../hooks/useWindowSize";
 import { useTheme } from "@emotion/react";
 import useClientEntries from '../hooks/useClientEntries';
-import ProductDescription from '../components/ProductDescription';
+import FormatRichText from '../components/FormatRichText';
 import ProductHeader from '../components/ProductHeader';
 
 const Produkt = ({ id }) => {
@@ -54,7 +54,15 @@ const Produkt = ({ id }) => {
                             heading={product.fields.overskrift}
                             date={product.sys.createdAt}
                         />
-                        <ProductDescription>{product.fields.beskrivelse}</ProductDescription>
+                        <FormatRichText>
+                            {product.fields.beskrivelse}
+                        </FormatRichText>
+                        
+                        {product.fields.infotekstbox && ( <>
+                            <FormatRichText>
+                                {product.fields.infotekstbox}    
+                            </FormatRichText>   
+                        </> )}
                     </div>
                 </article>
             </>)}

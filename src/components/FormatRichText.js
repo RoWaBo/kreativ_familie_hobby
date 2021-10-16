@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
 
-const ProductDescription = ({ textLimit, children }) => {
+const FormatRichText = ({ textLimit, children }) => {
 
     const { spacing, font } = useTheme()
     const description = textLimit ? `${children.substring(0, textLimit)}...` : children 
@@ -26,8 +26,8 @@ const ProductDescription = ({ textLimit, children }) => {
      );
 }
 
-ProductDescription.propTypes = {
+FormatRichText.propTypes = {
     textLimit: PropTypes.number    
 }
 
-export default ProductDescription;
+export default FormatRichText;

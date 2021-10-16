@@ -13,7 +13,8 @@ const useClientEntries = (contentTypeName, id) => {
                 if (contentTypeName) {
                     setData(response.items.filter(item => item.sys.contentType.sys.id === contentTypeName))
                 } else if (id) {
-                    setData(response.items.filter(item => item.sys.id === id))
+                    const items = response.items.filter(item => item.sys.id === id) 
+                    setData(items[0])
                 } else {
                     setData(response.items)
                 }

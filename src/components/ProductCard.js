@@ -5,6 +5,7 @@ import { useTheme } from "@emotion/react";
 import PropTypes from 'prop-types';
 import ProductDescription from './ProductDescription';
 import { Link } from '@reach/router';
+import ImgContainer from './ImgContainer';
 
 const ProductCard = ({ imgObj, heading, description, id, date}) => {
 
@@ -27,17 +28,6 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
             box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.2) 0px 18px 36px -18px;    
         } 
     `
-    const imgContainerStyle = css`
-        max-height: 300px;
-        border-radius: ${borderRadius};
-        overflow: hidden;
-        
-        & > img {
-            max-height: 300px;
-            object-fit: cover;
-            object-position: center;
-        }
-    `
     const headerStyle = css`
         display: flex;
         justify-content: space-between;
@@ -53,9 +43,9 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
     return (
         <Link to={`/produkt/${id}`}>
             <section css={containerStyle}>
-                <div css={imgContainerStyle}>
+                <ImgContainer medium>
                     <img src={imgObj.file.url} alt={imgObj.title} />
-                </div>
+                </ImgContainer>
                 <header css={headerStyle}>
                     <h1 css={headingStyle}>{heading}</h1>
                     <p css={dateStyle}>{date.substring(0, 10)}</p>

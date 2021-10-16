@@ -109,6 +109,7 @@ const NavBar = (props) => {
         align-items: center;
         flex-direction: column;
         padding: ${spacing.xs} ${spacing.wrapping};
+        margin-bottom: ${spacing.wrapping};
         box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 20px;
 
         & > * {

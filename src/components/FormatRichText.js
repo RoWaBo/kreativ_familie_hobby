@@ -5,13 +5,20 @@ import { css, useTheme } from '@emotion/react';
 
 const FormatRichText = ({ textLimit, children }) => {
 
-    const { spacing, font } = useTheme()
+    const { spacing, font, colors } = useTheme()
     const description = textLimit ? `${children.substring(0, textLimit)}...` : children 
 
     const containerStyle = css`
         & h1, h2, h3 {
-            margin-top: ${spacing.s};
+            margin-bottom: .3rem;
             font-size: ${font.size.l};
+        }
+        & p {
+            margin-bottom: ${spacing.s};
+        }
+        & a {
+            text-decoration: underline;
+            color: ${colors.font.secondary};    
         }
     `
 

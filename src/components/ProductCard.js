@@ -3,17 +3,17 @@ import { css } from '@emotion/react';
 // import useWindowSize from "../hooks/useWindowSize";
 import { useTheme } from "@emotion/react";
 import PropTypes from 'prop-types';
-import ProductDescription from './ProductDescription';
+import FormatRichText from './FormatRichText';
 import { Link } from '@reach/router';
+import ImgContainer from './ImgContainer';
+import ProductHeader from './ProductHeader';
 
 const ProductCard = ({ imgObj, heading, description, id, date}) => {
 
     // HOOKS
-    // const { width } = useWindowSize()
-    const { colors, font, spacing, breakPoints } = useTheme()
+    const { spacing } = useTheme()
     // VARIABLES
     const borderRadius = "15px";
-    // FUNCTIONS
 
     // === EMOTION STYLE ===
     const containerStyle = css`
@@ -27,40 +27,15 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
             box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.2) 0px 18px 36px -18px;    
         } 
     `
-    const imgContainerStyle = css`
-        max-height: 300px;
-        border-radius: ${borderRadius};
-        overflow: hidden;
-        
-        & > img {
-            max-height: 300px;
-            object-fit: cover;
-            object-position: center;
-        }
-    `
-    const headerStyle = css`
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: ${spacing.s} 0;   
-    `
-    const dateStyle = css`
-        font-weight: ${font.weight.light};
-    `
-    const headingStyle = css`
-        font-weight: ${font.weight.medium};
-    `
+
     return (
         <Link to={`/produkt/${id}`}>
             <section css={containerStyle}>
-                <div css={imgContainerStyle}>
+                <ImgContainer medium>
                     <img src={imgObj.file.url} alt={imgObj.title} />
-                </div>
-                <header css={headerStyle}>
-                    <h1 css={headingStyle}>{heading}</h1>
-                    <p css={dateStyle}>{date.substring(0, 10)}</p>
-                </header>
-                <ProductDescription textLimit={180}>{description}</ProductDescription>
+                </ImgContainer>
+                <ProductHeader heading={heading} date={date} />
+                <FormatRichText textLimit={180}>{description}</FormatRichText>
             </section>
         </Link>
     );

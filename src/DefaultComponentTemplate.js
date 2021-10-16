@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import useWindowSize from "../hooks/useWindowSize";
@@ -23,8 +23,8 @@ const DefaultComponentTemplate = () => {
      );
 }
 
-// DefaultComponentTemplate.propTypes = {
-//     name: PropTypes.string    
-// }
+DefaultComponentTemplate.propTypes = {
+    name: PropTypes.string    
+}
 
 export default DefaultComponentTemplate;

@@ -7,12 +7,12 @@ import { useTheme } from '@emotion/react';
 const Produkter = () => {
 
     // HOOKS
-    // const { width } = useWindowSize()
-    const { colors, font, spacing, breakPoints } = useTheme()
+    const { spacing } = useTheme()
 
     // === EMOTION STYLE ===
     const containerStyle = css`
-       margin: ${spacing.m} 0;
+       max-width: ${spacing.contentWidth};
+       margin: ${spacing.wrapping} auto;
        display: grid;
        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
        gap: ${spacing.l};

@@ -9,13 +9,13 @@ import ProductHeader from '../components/ProductHeader';
 const Produkt = ({ id }) => {
 
     // HOOKS
-    const { colors, font, spacing, breakPoints } = useTheme()
+    const { font, spacing } = useTheme()
     const product = useClientEntries(null, id)
     console.log(product);
 
     // === EMOTION STYLE ===
     const articleStyle = css`
-        margin: ${spacing.wrapping} 0;
+        /* margin: ${spacing.wrapping} 0; */
     `
     const imgContainerStyle = css`
 
@@ -37,6 +37,11 @@ const Produkt = ({ id }) => {
     const headingStyle = css`
         font-weight: ${font.weight.medium};
     `
+    const textContainerStyle = css`
+        margin: 0 auto;
+        padding: 0 ${spacing.wrapping};
+        max-width: ${spacing.contentWidth};
+    `
     return (
         <>
             {product && (<>
@@ -44,11 +49,13 @@ const Produkt = ({ id }) => {
                     <div css={imgContainerStyle}>
                         <img src={product.fields.billede.fields.file.url} alt={product.fields.billede.fields.title} />
                     </div>
-                    <ProductHeader 
-                        heading={product.fields.overskrift}
-                        date={product.sys.createdAt}
-                    />
-                    <ProductDescription>{product.fields.beskrivelse}</ProductDescription>
+                    <div css={textContainerStyle}>
+                        <ProductHeader
+                            heading={product.fields.overskrift}
+                            date={product.sys.createdAt}
+                        />
+                        <ProductDescription>{product.fields.beskrivelse}</ProductDescription>
+                    </div>
                 </article>
             </>)}
         </>

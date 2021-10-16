@@ -11,7 +11,7 @@ const Produkter = () => {
 
     // === EMOTION STYLE ===
     const containerStyle = css`
-       max-width: 1200px;
+       max-width: ${spacing.contentWidth};
        margin: ${spacing.wrapping} auto;
        display: grid;
        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

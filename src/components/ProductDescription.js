@@ -5,12 +5,13 @@ import { css, useTheme } from '@emotion/react';
 
 const ProductDescription = ({ textLimit, children }) => {
 
-    const { spacing } = useTheme()
+    const { spacing, font } = useTheme()
     const description = textLimit ? `${children.substring(0, textLimit)}...` : children 
 
     const containerStyle = css`
         & h1, h2, h3 {
             margin-top: ${spacing.s};
+            font-size: ${font.size.l};
         }
     `
 

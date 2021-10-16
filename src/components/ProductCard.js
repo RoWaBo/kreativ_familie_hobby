@@ -11,7 +11,7 @@ import ProductHeader from './ProductHeader';
 const ProductCard = ({ imgObj, heading, description, id, date}) => {
 
     // HOOKS
-    const { font, spacing} = useTheme()
+    const { spacing } = useTheme()
     // VARIABLES
     const borderRadius = "15px";
 

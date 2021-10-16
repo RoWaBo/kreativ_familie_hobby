@@ -10,16 +10,16 @@ const ProductHeader = ({ heading, date }) => {
 
     // === EMOTION STYLE ===
     const headerStyle = css`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: ${spacing.s} 0;   
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: ${spacing.xs} 0;   
     `
     const dateStyle = css`
-    font-weight: ${font.weight.light};
+        font-weight: ${font.weight.light};
     `
     const headingStyle = css`
-    font-weight: ${font.weight.medium};
+        font-size: ${font.size.xl};
     `
 
     return (

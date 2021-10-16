@@ -8,6 +8,7 @@ const spacing = {
     xl: "2.5rem",
     xxl: "5rem",
     contentWidth: "1200px",
+    textWidth: "700px",
     wrapping: "1rem"
 }
 

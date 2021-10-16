@@ -13,7 +13,7 @@ const ProductHeader = ({ heading, date }) => {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: ${spacing.xs} 0;   
+        margin: ${spacing.s} 0;   
     `
     const dateStyle = css`
         font-weight: ${font.weight.light};

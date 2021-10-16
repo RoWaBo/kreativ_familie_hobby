@@ -10,7 +10,6 @@ import ThemeProvider from "./contexts/ThemeProvider";
 import ThemeContextProvider from "./contexts/ThemeContext";
 // STYLE
 import GlobalStyle from "./style/Global";
-import Container from "./components/Container";
 import Produkt from "./views/Produkt";
 
 function App() {
@@ -22,14 +21,12 @@ function App() {
           <Location>
             {({ location }) => <NavBar location={location} />}
           </Location>
-          <Container contentWidth as="main">
             <Router>
               <Home path="/" />
               <Kontakt path="kontakt" />
               <Produkter path="produkter" />
               <Produkt path="produkt/:id" />
             </Router>
-          </Container>
         </ThemeProvider>
       </ThemeContextProvider>
     </>

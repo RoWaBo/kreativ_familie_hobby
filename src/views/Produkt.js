@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import ImgContainer from '../components/ImgContainer';
 // import useWindowSize from "../hooks/useWindowSize";
 // import { useTheme } from "@emotion/react";
 import useClientEntries from '../hooks/useClientEntries';
@@ -21,7 +20,8 @@ const Produkt = ({ id }) => {
 
         & > img { 
             max-height: 600px;
-            object-fit: contain;
+            object-fit: cover;
+            object-position: center;
         }   
     `
     return (

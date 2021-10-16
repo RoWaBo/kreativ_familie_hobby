@@ -10,11 +10,9 @@ import ImgContainer from './ImgContainer';
 const ProductCard = ({ imgObj, heading, description, id, date}) => {
 
     // HOOKS
-    // const { width } = useWindowSize()
-    const { colors, font, spacing, breakPoints } = useTheme()
+    const { font, spacing} = useTheme()
     // VARIABLES
     const borderRadius = "15px";
-    // FUNCTIONS
 
     // === EMOTION STYLE ===
     const containerStyle = css`

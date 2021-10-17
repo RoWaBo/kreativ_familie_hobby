@@ -15,7 +15,7 @@ const NavBar = (props) => {
     const { colors, font, spacing, breakPoints } = useTheme()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [pathName, setPathName] = useState()
-    useEffect(() => setPathName(props.location.pathname.substring(1)), [props.location.pathname])
+    useEffect(() => setPathName(props.location.pathname.replace(/\//g, "")), [props.location.pathname])
 
     //  FUNCTIONS
     const toggleMobileMenu = () => {

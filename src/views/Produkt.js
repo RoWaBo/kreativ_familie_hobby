@@ -8,12 +8,15 @@ import ProductHeader from '../components/ProductHeader';
 import ImgContainer from '../components/ImgContainer';
 import InfoBox from '../components/InfoBox';
 
-const Produkt = ({ id }) => {
+const Produkt = ({ location }) => {
+
+    // VARIABLES
+    const searchParams = new URLSearchParams(location.search)
+    const productID = searchParams.get("id")
 
     // HOOKS
     const { spacing } = useTheme()
-    const product = useClientEntries(null, id)
-    console.log(product);
+    const product = useClientEntries(null, productID)
 
     // === EMOTION STYLE ===
     const articleStyle = css`
@@ -27,6 +30,7 @@ const Produkt = ({ id }) => {
     const infoBoxStyle = {
         margin: `${spacing.l} 0` 
     }
+
     return (
         <>
             {product && ( <>

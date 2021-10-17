@@ -42,7 +42,7 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
     `
 
     return (
-        <Link to={`/produkt/${id}`}>
+        <Link to={`/produkt?id=${id}`}>
             <section css={containerStyle}>
                 <ImgContainer medium>
                     <img src={imgObj.file.url} alt={imgObj.title} />

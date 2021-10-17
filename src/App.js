@@ -25,7 +25,7 @@ function App() {
               <Home path="/" />
               <Kontakt path="kontakt" />
               <Produkter path="produkter" />
-              <Produkt path="produkt/:id" />
+              <Produkt path="produkt" />
             </Router>
         </ThemeProvider>
       </ThemeContextProvider>

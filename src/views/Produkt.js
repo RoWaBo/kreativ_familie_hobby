@@ -6,11 +6,12 @@ import useClientEntries from '../hooks/useClientEntries';
 import FormatRichText from '../components/FormatRichText';
 import ProductHeader from '../components/ProductHeader';
 import ImgContainer from '../components/ImgContainer';
+import InfoBox from '../components/InfoBox';
 
 const Produkt = ({ id }) => {
 
     // HOOKS
-    const { font, spacing } = useTheme()
+    const { spacing } = useTheme()
     const product = useClientEntries(null, id)
     console.log(product);
 
@@ -23,6 +24,9 @@ const Produkt = ({ id }) => {
         padding: 0 ${spacing.wrapping};
         max-width: ${spacing.textWidth};
     `
+    const infoBoxStyle = {
+        margin: `${spacing.l} 0` 
+    }
     return (
         <>
             {product && ( <>
@@ -40,9 +44,11 @@ const Produkt = ({ id }) => {
                         </FormatRichText>
                         
                         {product.fields.infotekstbox && ( <>
-                            <FormatRichText>
-                                {product.fields.infotekstbox}    
-                            </FormatRichText>   
+                            <InfoBox style={infoBoxStyle}>
+                                <FormatRichText>
+                                    {product.fields.infotekstbox}    
+                                </FormatRichText>   
+                            </InfoBox>
                         </> )}
                     </div>
                 </article>

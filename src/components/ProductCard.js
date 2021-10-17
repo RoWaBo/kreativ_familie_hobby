@@ -31,12 +31,14 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         transition: all .3s;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+
+
         &:hover {
             box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.2) 0px 18px 36px -18px;    
         } 
-    `
-    const descriptionStyle = css`
-        margin-bottom: ${spacing.m};
     `
 
     return (
@@ -46,9 +48,7 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
                     <img src={imgObj.file.url} alt={imgObj.title} />
                 </ImgContainer>
                 <ProductHeader heading={heading} date={date} />
-                <div css={descriptionStyle}>
-                    <FormatRichText textLimit={180}>{description}</FormatRichText>
-                </div>
+                <FormatRichText textLimit={180}>{description}</FormatRichText>
                 <Button outline >Læs mere</Button>
             </section>
         </Link>

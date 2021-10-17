@@ -24,7 +24,7 @@ const Button = ({ children, onClick, outline, style }) => {
 
         &:hover {
             background-color: ${colors.primary.dark};
-            color: ${colors.primary.contrast};
+            color: ${colors.primary.contrastText};
         }
 
         & > * {

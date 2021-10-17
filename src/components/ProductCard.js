@@ -12,7 +12,7 @@ import Button from './Button';
 const ProductCard = ({ imgObj, heading, description, id, date}) => {
 
     // HOOKS
-    const { spacing, breakPoints } = useTheme()
+    const { spacing, breakPoints, colors } = useTheme()
     const { width } = useWindowSize()
 
     // VARIABLES
@@ -27,6 +27,7 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
         /* height: ${isMobileWidth ? '645px' : '623px'}; */
         height: 630px;
         border-radius: ${borderRadius};
+        background-color: ${colors.background.secondary};
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         transition: all .3s;
 
@@ -35,7 +36,7 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
         } 
     `
     const descriptionStyle = css`
-        
+        margin-bottom: ${spacing.m};
     `
 
     return (

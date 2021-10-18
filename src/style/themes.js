@@ -5,12 +5,13 @@ export const lightTheme = {
             main: "#1976d2",
             light: "#42a5f5",
             dark: "#1565c0",
-            contrast: "#FFF"
+            contrastText: "#FFF"
         },
         secondary: {
             light: "#ff4081",
             main: "#f50057",
-            dark: "#c51162"
+            dark: "#c51162",
+            contrastText: "#FFF"
         },
         grey: {
             extraLight: "#fafafa",
@@ -34,15 +35,16 @@ export const lightTheme = {
 export const darkTheme = {
     colors: {
         primary: {
-            main: "#1976d2",
-            light: "#42a5f5",
-            dark: "#1565c0",
-            contrast: "#FFF"
+            main: "#90caf9",
+            light: "#e3f2fd",
+            dark: "#42a5f5",
+            contrastText: "rgba(0, 0, 0, 0.87)"
         },
         secondary: {
-            light: "#ff4081",
-            main: "#f50057",
-            dark: "#c51162"
+            light: "#ce93d8",
+            main: "#f3e5f5",
+            dark: "#ab47bs",
+            contrastText: "rgba(0, 0, 0, 0.87)"
         },
         grey: {
             extraLight: "#fafafa",
@@ -52,8 +54,8 @@ export const darkTheme = {
             extraDark: "#bdbdbd",
         },
         background: {
-            primary: "#341931",
-            secondary: "#111625"
+            primary: "#121212",
+            secondary: "#000"
         },
         font: {
             primary: "rgba(255, 255, 255)",

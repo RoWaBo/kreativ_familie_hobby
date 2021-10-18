@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import useWindowSize from "../hooks/useWindowSize";
 import { useTheme } from "@emotion/react";
 import PropTypes from 'prop-types';
 import FormatRichText from './FormatRichText';
@@ -12,43 +11,39 @@ import Button from './Button';
 const ProductCard = ({ imgObj, heading, description, id, date}) => {
 
     // HOOKS
-    const { spacing, breakPoints } = useTheme()
-    const { width } = useWindowSize()
+    const { spacing, colors } = useTheme()
 
     // VARIABLES
     const borderRadius = "15px";
 
-    // FUNCTIONS
-    const isMobileWidth = width < breakPoints.mobile 
-
     // === EMOTION STYLE ===
     const containerStyle = css`
         padding: ${spacing.m} ${spacing.s};
-        /* height: ${isMobileWidth ? '645px' : '623px'}; */
-        height: 630px;
+        height: 550px;
         border-radius: ${borderRadius};
+        background-color: ${colors.background.secondary};
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         transition: all .3s;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+
 
         &:hover {
             box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.2) 0px 18px 36px -18px;    
         } 
     `
-    const descriptionStyle = css`
-        
-    `
 
     return (
-        <Link to={`/produkt/${id}`}>
+        <Link to={`/produkt?id=${id}`}>
             <section css={containerStyle}>
                 <ImgContainer medium>
                     <img src={imgObj.file.url} alt={imgObj.title} />
                 </ImgContainer>
                 <ProductHeader heading={heading} date={date} />
-                <div css={descriptionStyle}>
-                    <FormatRichText textLimit={180}>{description}</FormatRichText>
-                </div>
-                <Button outline >Læs mere</Button>
+                <FormatRichText textLimit={130}>{description}</FormatRichText>
+                <Button outline >Se {heading}</Button>
             </section>
         </Link>
     );

@@ -6,7 +6,7 @@ const PrintProductCards = () => {
 
     const products = useClientEntries(contentTypeNames.products)
 
-    products && console.log(products);
+    // products && console.log(products);
  
     return ( 
         <>

@@ -42,7 +42,7 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
                     <img src={imgObj.file.url} alt={imgObj.title} />
                 </ImgContainer>
                 <ProductHeader heading={heading} date={date} />
-                <FormatRichText textLimit={180}>{description}</FormatRichText>
+                <FormatRichText textLimit={130}>{description}</FormatRichText>
                 <Button outline >Se {heading}</Button>
             </section>
         </Link>

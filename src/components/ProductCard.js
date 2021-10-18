@@ -36,10 +36,11 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
     `
     const imgContainerStyle = css`
 
-
         & > img {
             height: 300px;
             object-fit: cover;
+            border-radius: 5px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; 
         }
     `
 
@@ -52,8 +53,8 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
                 <div css={imgContainerStyle}>
                     <img src={imgObj.file.url} alt={imgObj.title} />
                 </div>
-                <ProductHeader heading={heading} date={date} />
-                <FormatRichText textLimit={130} style={{ height: '130px' }}>{description}</FormatRichText>
+                <ProductHeader small heading={heading} date={date} />
+                <FormatRichText textLimit={130} style={{ height: '140px' }}>{description}</FormatRichText>
                 <Button outline >Se {heading}</Button>
             </section>
         </Link>

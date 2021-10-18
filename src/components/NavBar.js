@@ -19,7 +19,7 @@ const NavBar = (props) => {
     const mq = useMediaQuery()
     const [pathName, setPathName] = useState()
     useEffect(() => setPathName(props.location.pathname.replace(/\//g, "")), [props.location.pathname])
-    console.log(useScrollDirection()) 
+    const scrollDirection = useScrollDirection() 
 
     //  FUNCTIONS
     const toggleMobileMenu = () => {
@@ -111,9 +111,21 @@ const NavBar = (props) => {
         }    
     `
     const headerStyle = css`
+        background: ${colors.background.primary};
         padding: ${spacing.xs} ${spacing.wrapping};
         margin-bottom: ${spacing.wrapping};
         box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 20px;
+
+        /* Sticky header - appears when scrolling up */
+        transition: all .7s; 
+        position: sticky;
+
+        ${scrollDirection === "down" && (`
+            top: -70px;
+        `)}
+        ${scrollDirection === "up" && (`
+            top: 0px;
+        `)}
     `
     const pathNameMobileStyle = css`
         text-transform: uppercase;

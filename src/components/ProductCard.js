@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import useWindowSize from "../hooks/useWindowSize";
 import { useTheme } from "@emotion/react";
 import PropTypes from 'prop-types';
 import FormatRichText from './FormatRichText';
@@ -12,19 +11,14 @@ import Button from './Button';
 const ProductCard = ({ imgObj, heading, description, id, date}) => {
 
     // HOOKS
-    const { spacing, breakPoints, colors } = useTheme()
-    const { width } = useWindowSize()
+    const { spacing, colors } = useTheme()
 
     // VARIABLES
     const borderRadius = "15px";
 
-    // FUNCTIONS
-    const isMobileWidth = width < breakPoints.mobile 
-
     // === EMOTION STYLE ===
     const containerStyle = css`
         padding: ${spacing.m} ${spacing.s};
-        /* height: ${isMobileWidth ? '645px' : '623px'}; */
         height: 630px;
         border-radius: ${borderRadius};
         background-color: ${colors.background.secondary};
@@ -49,7 +43,7 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
                 </ImgContainer>
                 <ProductHeader heading={heading} date={date} />
                 <FormatRichText textLimit={180}>{description}</FormatRichText>
-                <Button outline >Læs mere</Button>
+                <Button outline >Se {heading}</Button>
             </section>
         </Link>
     );

@@ -28,7 +28,7 @@ const Produkt = ({ location }) => {
         max-width: ${spacing.textWidth};
     `
     const infoBoxStyle = {
-        margin: `${spacing.l} 0` 
+        margin: `${spacing.m} 0` 
     }
 
     return (

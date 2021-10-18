@@ -7,6 +7,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
 import { useEffect, useState } from "react";
 import ToggleThemeBtn from "./ToggleThemeBtn";
+import useMediaQuery from "../style/useMediaQuery";
 
 const NavBar = (props) => {
 
@@ -14,6 +15,7 @@ const NavBar = (props) => {
     const { width } = useWindowSize()
     const { colors, font, spacing, breakPoints } = useTheme()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const mq = useMediaQuery()
     const [pathName, setPathName] = useState()
     useEffect(() => setPathName(props.location.pathname.replace(/\//g, "")), [props.location.pathname])
 
@@ -25,7 +27,7 @@ const NavBar = (props) => {
     }
 
     // VARIABLES
-    const navBarHeight = "64px"
+    const navBarHeight = mq(["unset", "50px" ])
 
     // === EMOTION STYLE ===
     const navBarStyle = css`
@@ -63,7 +65,7 @@ const NavBar = (props) => {
         justify-self: start;
 
         & > * {
-            font-size: ${font.icon.l};
+            font-size: ${font.icon.m};
             color: ${colors.font.primary.main};    
         }
     `

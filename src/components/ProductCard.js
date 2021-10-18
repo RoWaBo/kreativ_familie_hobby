@@ -19,7 +19,7 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
     // === EMOTION STYLE ===
     const containerStyle = css`
         padding: ${spacing.m} ${spacing.s};
-        height: 630px;
+        height: 550px;
         border-radius: ${borderRadius};
         background-color: ${colors.background.secondary};
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

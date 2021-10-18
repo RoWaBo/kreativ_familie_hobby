@@ -1,10 +1,9 @@
 import ProductCard from './ProductCard';
-import { contentTypeNames } from "../contentTypeNames";
 import useClientEntries from "../hooks/useClientEntries";
 
 const PrintProductCards = () => {
 
-    const products = useClientEntries(contentTypeNames.products)
+    const products = useClientEntries("product")
 
     // products && console.log(products);
  

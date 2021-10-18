@@ -19,9 +19,9 @@ const Produkter = () => {
        place-content: center;  
     `
     return (
-        <div css={containerStyle}>
+        <main css={containerStyle}>
             <PrintProductCards />
-        </div>
+        </main>
     );
 }
 

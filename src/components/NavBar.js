@@ -39,7 +39,7 @@ const NavBar = (props) => {
         overflow: hidden;
 
         & li {
-            font-size: ${font.size.l};
+            font-size: ${font.size.m};
             font-weight: ${font.weight.regular};
             color: ${colors.font.primary.main};
             text-transform: uppercase;
@@ -120,6 +120,7 @@ const NavBar = (props) => {
     `
     const pathNameMobileStyle = css`
         text-transform: uppercase;
+        font-size: ${font.size.m};
     `
 
     return (

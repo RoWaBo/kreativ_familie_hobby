@@ -1,17 +1,17 @@
-import useMediaQuery from "./useMediaQuery";
+// import useMediaQuery from "./useMediaQuery";
 
 const useFont = () => {
 
-    const mq = useMediaQuery()
+    // const mq = useMediaQuery()
 
     const font = {
         fontImportUrl: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap',
         family: `'Poppins', sans-serif`,
         size: {
-            xl: mq(["20px", "30px"]),
-            l: mq(["16px", "20px"]),
-            m: mq(["14px", "16px"]),
-            s: mq(["10px", "13px"])
+            xl: "30px",
+            l: "20px",
+            m: "16px",
+            s: "13px"
         },
         weight: {
             bold: "700",

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
 
-const FormatRichText = ({ textLimit, children }) => {
+const FormatRichText = ({ textLimit, children, style }) => {
 
     const { spacing, font, colors } = useTheme()
     const description = textLimit ? `${children.substring(0, textLimit)}...` : children 
@@ -23,7 +23,7 @@ const FormatRichText = ({ textLimit, children }) => {
     `
 
     return ( 
-        <div css={containerStyle} 
+        <div css={containerStyle} style={style} 
             dangerouslySetInnerHTML={
                 {
                 __html: marked(description)

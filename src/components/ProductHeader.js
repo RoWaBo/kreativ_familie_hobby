@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { useTheme } from "@emotion/react";
 import PropTypes from 'prop-types';
 
-const ProductHeader = ({ heading, date }) => {
+const ProductHeader = ({ heading, date, style }) => {
 
     // HOOKS
     const { font, spacing } = useTheme()
@@ -23,7 +23,7 @@ const ProductHeader = ({ heading, date }) => {
     `
 
     return (
-        <header css={headerStyle}>
+        <header css={headerStyle} style={style}>
             <h1 css={headingStyle}>{heading}</h1>
             <p css={dateStyle}>{date.substring(0, 10)}</p>
         </header>

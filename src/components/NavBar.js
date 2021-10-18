@@ -8,6 +8,7 @@ import { IoMdClose } from 'react-icons/io';
 import { useEffect, useState } from "react";
 import ToggleThemeBtn from "./ToggleThemeBtn";
 import useMediaQuery from "../style/useMediaQuery";
+import useScrollDirection from "../hooks/useScrollDirection";
 
 const NavBar = (props) => {
 
@@ -18,6 +19,7 @@ const NavBar = (props) => {
     const mq = useMediaQuery()
     const [pathName, setPathName] = useState()
     useEffect(() => setPathName(props.location.pathname.replace(/\//g, "")), [props.location.pathname])
+    console.log(useScrollDirection()) 
 
     //  FUNCTIONS
     const toggleMobileMenu = () => {

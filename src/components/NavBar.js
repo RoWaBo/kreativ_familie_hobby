@@ -31,6 +31,8 @@ const NavBar = (props) => {
 
     // === EMOTION STYLE ===
     const navBarStyle = css`
+        max-width: ${spacing.contentWidth};
+        margin: 0 auto;  
         width: 100%; 
         height: ${navBarHeight};
         display: flex;
@@ -107,16 +109,9 @@ const NavBar = (props) => {
         }    
     `
     const headerStyle = css`
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         padding: ${spacing.xs} ${spacing.wrapping};
         margin-bottom: ${spacing.wrapping};
         box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 20px;
-
-        & > * {
-            max-width: ${spacing.contentWidth};   
-        }    
     `
     const pathNameMobileStyle = css`
         text-transform: uppercase;

@@ -4,7 +4,7 @@ import { useTheme } from "@emotion/react";
 import PropTypes from 'prop-types';
 import FormatRichText from './FormatRichText';
 import { Link } from '@reach/router';
-import ImgContainer from './ImgContainer';
+// import ImgContainer from './ImgContainer';
 import ProductHeader from './ProductHeader';
 import Button from './Button';
 
@@ -19,30 +19,41 @@ const ProductCard = ({ imgObj, heading, description, id, date}) => {
     // === EMOTION STYLE ===
     const containerStyle = css`
         padding: ${spacing.m} ${spacing.s};
-        height: 550px;
+        /* height: 550px; */
         border-radius: ${borderRadius};
         background-color: ${colors.background.secondary};
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         transition: all .3s;
 
-        display: flex;
+        /* display: flex;
         flex-direction: column;
-        justify-content: space-between; 
+        justify-content: space-between;  */
 
 
         &:hover {
             box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.2) 0px 18px 36px -18px;    
         } 
     `
+    const imgContainerStyle = css`
+
+
+        & > img {
+            height: 300px;
+            object-fit: cover;
+        }
+    `
 
     return (
         <Link to={`/produkt?id=${id}`}>
             <section css={containerStyle}>
-                <ImgContainer medium>
+                {/* <ImgContainer medium>
                     <img src={imgObj.file.url} alt={imgObj.title} />
-                </ImgContainer>
+                </ImgContainer> */}
+                <div css={imgContainerStyle}>
+                    <img src={imgObj.file.url} alt={imgObj.title} />
+                </div>
                 <ProductHeader heading={heading} date={date} />
-                <FormatRichText textLimit={130}>{description}</FormatRichText>
+                <FormatRichText textLimit={130} style={{ height: '130px' }}>{description}</FormatRichText>
                 <Button outline >Se {heading}</Button>
             </section>
         </Link>

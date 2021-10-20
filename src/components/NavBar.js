@@ -29,12 +29,13 @@ const NavBar = (props) => {
     }
 
     // VARIABLES
-    const navBarHeight = mq(["unset", "50px" ])
+    const navBarHeight = mq(["35", "50px" ])
 
     // === EMOTION STYLE ===
     const navBarStyle = css`
         max-width: ${spacing.contentWidth};
-        margin: 0 auto;  
+        margin: 0 auto;
+        padding: 0 ${spacing.wrapping};  
         width: 100%; 
         height: ${navBarHeight};
         display: flex;
@@ -112,7 +113,7 @@ const NavBar = (props) => {
     `
     const headerStyle = css`
         background: ${colors.background.primary};
-        padding: ${spacing.xs} ${spacing.wrapping};
+        padding: ${spacing.xs} 0;
         margin-bottom: ${spacing.wrapping};
         box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 20px;
 

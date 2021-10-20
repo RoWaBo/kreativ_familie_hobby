@@ -12,8 +12,7 @@ const ProductHeader = ({ heading, date, style, small }) => {
     const headerStyle = css`
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        margin: ${spacing.s} 0;   
+        align-items: center; 
     `
     const headerSmallStyle = css`
         margin-bottom: ${spacing.xs};   

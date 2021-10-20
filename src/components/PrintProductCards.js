@@ -1,5 +1,6 @@
 import ProductCard from './ProductCard';
 import useClientEntries from "../hooks/useClientEntries";
+import Skeleton from './Skeleton';
 
 const PrintProductCards = () => {
 
@@ -8,7 +9,7 @@ const PrintProductCards = () => {
     // products && console.log(products);
  
     return ( 
-        <>
+        <Skeleton>
             {products && products.map(product => (
                 <ProductCard key={product.sys.id} 
                     imgObj={product.fields.billede.fields}
@@ -18,7 +19,7 @@ const PrintProductCards = () => {
                     date={product.sys.createdAt}
                 />    
             ))}
-        </>
+        </Skeleton>
      );
 }
 

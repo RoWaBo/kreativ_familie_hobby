@@ -5,10 +5,8 @@ import { useTheme } from "@emotion/react";
 import useClientEntries from '../hooks/useClientEntries';
 import FormatRichText from '../components/FormatRichText';
 import ProductHeader from '../components/ProductHeader';
-import ImgContainer from '../components/ImgContainer';
 import InfoBox from '../components/InfoBox';
 import useMediaQuery from '../style/useMediaQuery';
-import useWindowSize from '../hooks/useWindowSize';
 
 const Produkt = ({ location }) => {
 
@@ -20,23 +18,24 @@ const Produkt = ({ location }) => {
     const { spacing } = useTheme()
     const product = useClientEntries(null, productID)
     const mq = useMediaQuery()
-    const { width } = useWindowSize()
-    
-    const mobileView = width < 737
 
     // === EMOTION STYLE ===
     const articleStyle = css`
         margin: auto;
         max-width: ${spacing.contentWidth};
         padding: 0 ${spacing.wrapping};
-        display: ${mobileView ? "block" : "flex"};
+        display: ${mq(["block", "block", "flex"])};
     `
     const textContainerStyle = css`
         flex: 1;
         display: grid;
         margin: 0 auto;
-        padding: ${spacing.s} 0 ${spacing.s} ${spacing.xl};
-        ${mobileView && `padding: ${spacing.s} 0;`}
+        padding: ${
+            mq([
+                `${spacing.s} 0`,
+                `${spacing.s} 0`,
+                `${spacing.s} 0 ${spacing.s} ${spacing.gutter}`
+                ])};
     `
     const imgContainerStyle = css`
         flex: 1;

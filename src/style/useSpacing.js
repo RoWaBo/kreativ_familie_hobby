@@ -14,7 +14,8 @@ const useSpacing = () => {
         xxl: "5rem",
         contentWidth: "1200px",
         textWidth: "700px",
-        wrapping: mq(["1rem", "2rem"])
+        wrapping: mq(["1rem", "2rem"]),
+        gutter: "3rem"
     }
 
     return spacing

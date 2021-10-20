@@ -8,6 +8,7 @@ import { IoMdClose } from 'react-icons/io';
 import { useEffect, useState } from "react";
 import ToggleThemeBtn from "./ToggleThemeBtn";
 import useMediaQuery from "../style/useMediaQuery";
+import useScrollDirection from "../hooks/useScrollDirection";
 
 const NavBar = (props) => {
 
@@ -18,6 +19,7 @@ const NavBar = (props) => {
     const mq = useMediaQuery()
     const [pathName, setPathName] = useState()
     useEffect(() => setPathName(props.location.pathname.replace(/\//g, "")), [props.location.pathname])
+    const scrollDirection = useScrollDirection() 
 
     //  FUNCTIONS
     const toggleMobileMenu = () => {
@@ -27,10 +29,13 @@ const NavBar = (props) => {
     }
 
     // VARIABLES
-    const navBarHeight = mq(["unset", "50px" ])
+    const navBarHeight = mq(["35", "50px" ])
 
     // === EMOTION STYLE ===
     const navBarStyle = css`
+        max-width: ${spacing.contentWidth};
+        margin: 0 auto;
+        padding: 0 ${spacing.wrapping};  
         width: 100%; 
         height: ${navBarHeight};
         display: flex;
@@ -107,16 +112,21 @@ const NavBar = (props) => {
         }    
     `
     const headerStyle = css`
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding: ${spacing.xs} ${spacing.wrapping};
+        background: ${colors.background.primary};
+        padding: ${spacing.xs} 0;
         margin-bottom: ${spacing.wrapping};
         box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 20px;
 
-        & > * {
-            max-width: ${spacing.contentWidth};   
-        }    
+        /* Sticky header - appears when scrolling up */
+        transition: all .7s; 
+        position: sticky;
+
+        ${scrollDirection === "down" && (`
+            top: -70px;
+        `)}
+        ${scrollDirection === "up" && (`
+            top: 0px;
+        `)}
     `
     const pathNameMobileStyle = css`
         text-transform: uppercase;

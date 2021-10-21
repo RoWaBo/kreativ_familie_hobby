@@ -114,7 +114,7 @@ const NavBar = (props) => {
     const headerStyle = css`
         background: ${colors.background.primary};
         padding: ${spacing.xs} 0;
-        margin-bottom: ${spacing.wrapping};
+        margin-bottom: 5vh;
         box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 20px;
 
         /* Sticky header - appears when scrolling up */

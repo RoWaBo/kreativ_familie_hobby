@@ -10,6 +10,7 @@ const HeroImg = () => {
     const heroImgStyle = css`
         max-width: ${spacing.contentWidth};
         max-height: 40vh;
+        padding: 0 ${spacing.wrapping};
         object-fit: cover;
         object-position: center;
         margin: 0 auto;

@@ -1,8 +1,8 @@
-import useMediaQuery from "./useMediaQuery";
+// import useMediaQuery from "./useMediaQuery";
 
 const useSpacing = () => {
     
-    const mq = useMediaQuery()
+    // const mq = useMediaQuery()
     
     const spacing = {
         xxs: "0.2rem",
@@ -12,9 +12,9 @@ const useSpacing = () => {
         l: "2rem",
         xl: "2.5rem",
         xxl: "5rem",
-        contentWidth: "1200px",
+        contentWidth: "1230px",
         textWidth: "700px",
-        wrapping: mq(["1rem", "2rem"]),
+        wrapping: "1rem",
         gutter: "3rem"
     }
 
